@@ -248,3 +248,17 @@ main{
 #selectprofession{
   min-width: 426px;
 }
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #005cbf;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    margin-top: 15px;
+}
+footer{
+  margin-top: 50px;
+}
