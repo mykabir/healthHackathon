@@ -225,3 +225,16 @@ textarea {
 #askingForSingup{
 	color:#FFFFFF;
 }
+/* Overriding bootstrap CSS */
+.bg-dark {
+    background-color: #17a2b8 !important;
+}
+.navbar-dark .navbar-nav .nav-link{
+  color: #ffffff;
+}
+body{
+  background: #eeeeee;
+}
+main{
+  margin-top: 50px;
+}
