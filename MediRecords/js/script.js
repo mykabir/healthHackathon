@@ -58,10 +58,11 @@ function signupSubmit(){
 
 $('#doctorSearch').on('click', function (e) {
   e.preventDefault();
-  var patientInfo = ["eid1\tpid1", "eid2\tpid2"];
+  var patientInfo = ["John Doe", "Doe John"];
+  var patientDob = ["8062244999", "8062244988"];
   data = "";
   for (var i = 0; i < patientInfo.length; ++i) {
-	  data += '<li class="list-item"><a class="" href="./records.html">'+patientInfo[i]+'</a></li>'
+	  data += '<li class="list-item"><a class="" href="./records.html">'+patientInfo[i]+ '  <p class="pDob">Phone Number: '+ patientDob[i]+'</p></a></li>'
   }
   $('#patientList').html(data);
 });

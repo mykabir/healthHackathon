@@ -262,3 +262,47 @@ main{
 footer{
   margin-top: 50px;
 }
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    
+    input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+    }
+    input[type="date"]:focus:before,
+    input[type="date"]:valid:before {
+    content: "";
+    }
+    
+    
+    .list-item {
+      background-color: #17a2b8;
+      margin: 3px;
+    }
+    .list-item a{
+      color: #ffffff;
+      padding: 5px;
+    }
+    .search{
+      color: #000;
+    }
+    .list-item{
+      padding: 20px;
+    }
+    .pDob{
+      margin-left: 50px;
+      float: right;
+    }
