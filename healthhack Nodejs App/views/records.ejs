@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ <% include ./partials/head %>
+
+  </head>
+  <body>
+    <header>
+  <% include ./partials/header %>
+</header>
+
+<main role="main">
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+    <h3>Mee\dicine Records:</h3>
+       <% if (data.length > 0) {%>
+            <table class="table table-striped">
+                 <thead>
+                    <tr>
+                        <th scope="col">Record Date</th>
+                        <th scope="col">Medicine Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((d, index) => { %>
+                        <tr>
+                            
+                          
+                            <td><%= d.rdate %></td>
+                            <td><%= d.medname %></td>
+                            <td>
+                                <a href="" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                                <a href="" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+
+
+            <p class="text-center">No Patient found. Go <a href="" >here</a></p>
+        <% } %>
+      
+      
+     
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <% include ./partials/footer %>
+  </footer>
+</main>
+</body>
+</html>

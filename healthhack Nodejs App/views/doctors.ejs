@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ <% include ./partials/head %>
+
+  </head>
+  <body>
+    <header>
+  <% include ./partials/header %>
+</header>
+
+<main role="main">
+
+<form class="form-signin">
+	
+		<h1 class="search h3 mb-3 font-weight-normal">Search Patient</h1>
+	  
+		<div class="form-group input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+			 </div>
+			<input id="signupFirstName" class="form-control" placeholder="First name" type="text" required="">
+			<input id="signupLastName" class="form-control" placeholder="Last name" type="text" required="">
+		</div>
+		
+		<div class="form-group input-group">
+			<div class="input-group-prepend">		    
+				<span class="input-group-text"> <i class="fas fa-birthday-cake"></i> </span>	
+			</div>
+			<input type="Date" id="doctorDoB" placeholder="Date of Birth" class="form-control">
+		</div>
+		
+		<div class="form-group">
+			<button id="doctorSearch" type="submit" class="btn btn-primary btn-block"> Search </button>
+		</div>                                                               
+	</form>
+
+	<div class="container">
+		
+		<ul id="patientList" class="navbar-nav mr-auto"><li class="list-item"><a class="" href="./records?email=xc9pd@mst.edu">John Doe  <p class="pDob">Phone Number: 8062244999</p></a></li><li class="list-item"><a class="" href="./records?email=xc9pd@mst.edu">Doe John  <p class="pDob">Phone Number: 8062244988</p></a></li></ul>
+	
+	</div>
+
+
+
+  <!-- FOOTER -->
+  <script>
+  $('#doctorSearch').on('click', function (e) {
+  e.preventDefault();
+  var patientInfo = ["John Doe", "Doe John"];
+  var patientDob = ["8062244999", "8062244988"];
+  data = "";
+  for (var i = 0; i < patientInfo.length; ++i) {
+	  data += '<li class="list-item"><a class="" href="./records.html">'+patientInfo[i]+ '  <p class="pDob">Phone Number: '+ patientDob[i]+'</p></a></li>'
+  }
+  $('#patientList').html(data);
+  </script>
+  <footer class="container">
+    <% include ./partials/footer %>
+  </footer>
+</main>
+</body>
+</html>

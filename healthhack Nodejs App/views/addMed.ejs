@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <% include ./partials/head %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+  <% include ./partials/header %>
+
+</header>
+
+<main role="main">
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+     <form id="uploadForm"
+      enctype="multipart/form-data"
+      action="/file"
+      method="post">
+    <input type="file" id="userFile" name= "<%= name %>" />
+    <input type="text" hidden id="savePath" name="savePath" value="path"/>
+   
+
+       <button  class="button button-block" onclick="save()" />Save</button>
+       
+     </form>  
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+       
+       <script>
+       function save(){
+          uploadForm.submit(function() {
+    $(this).ajaxSubmit({
+
+        error: function(xhr) {
+            console.log('Error: ' + xhr.status);
+        },
+
+        success: function(response) {
+            console.log('Success: ' + response);
+        }
+    });
+    }
+    return false;
+});
+       
+       </script>
+       
+       <% include ./partials/footer %>
+  </footer>
+  
+  
+  
+  
+</main>
+</body>
+</html>
