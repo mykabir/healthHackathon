@@ -54,3 +54,14 @@ function signupSubmit(){
     contentType : "application/json"
   });
 }
+
+
+$('#doctorSearch').on('click', function (e) {
+  e.preventDefault();
+  var patientInfo = ["eid1\tpid1", "eid2\tpid2"];
+  data = "";
+  for (var i = 0; i < patientInfo.length; ++i) {
+	  data += '<li class="list-item"><a class="" href="./records.html">'+patientInfo[i]+'</a></li>'
+  }
+  $('#patientList').html(data);
+});

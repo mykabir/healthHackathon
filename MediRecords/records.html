@@ -29,6 +29,17 @@
           font-size: 3.5rem;
         }
       }
+	  
+	  .mb-3 {
+		background-color: #17a2b8;
+		color: #ffffff;
+		padding: 2px;
+		margin-top: 5px;
+	  }
+	  .themed-grid-col {
+		 border-style: ridge;
+	  }
+	  
     </style>
     <!-- Custom styles for this template -->
     <link href="./css/carousel.css" rel="stylesheet">
@@ -77,6 +88,16 @@
       <input type="file" id="file-input" accept="image/*">
     </div><!-- /.row -->
   </div><!-- /.container -->
+  
+  
+  <div class="container records">
+		<label style="position:relative;" >Date</label>
+		<div class="row mb-3">
+			<div class="col-6 themed-grid-col">Medicine</div>
+			<div class="col-6 themed-grid-col">Dose</div>
+		</div>
+		<button type="button" class="btn btn-primary btn-block">Delete</button>
+	</div>
 
 
   <!-- FOOTER -->
@@ -86,5 +107,41 @@
   </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-      <script>window.jQuery || document.write('<script src="./js/vendor/jquery-slim.min.js"><\/script>')</script><script src="./js/bootstrap.bundle.min.js" ></script></body>
+      <script>window.jQuery || document.write('<script src="./js/vendor/jquery-slim.min.js"><\/script>')</script><script src="./js/bootstrap.bundle.min.js" ></script>	  
+	
+	<script>
+    $( document ).ready(function() {
+        var obj1 = {}
+		obj1.date = "1/1/11"
+		obj1.medicine = ['parasetamal', 'napa']
+		obj1.dose = ['1+1+1', '3 times']
+		
+		var obj2 = {}
+		obj2.date = "2/2/22"
+		obj2.medicine = ['hi', 'hello']
+		obj2.dose = ['1+1', '2 times']
+		
+		var obj = [obj1, obj2]
+		data = '';
+		
+		for (var i=0; i<obj.length; i++) {
+			data += '<hr><label style="position:relative;" >'+ obj[i].date +'</label>'
+			for (var j=0; j<obj[i].medicine.length; j++) {
+				data += '<div class="row mb-3">' + 
+							'<div class="col-6 themed-grid-col">' + obj[i].medicine[j] + '</div>' +
+							'<div class="col-6 themed-grid-col">' + obj[i].dose[j] + '</div>' +
+						'</div>'
+			}
+			data += '<button type="button" class="btn btn-primary btn-block">Delete</button>'
+		}
+		
+		$(".records").html(data);
+    });
+ 
+    $( window ).on( "load", function() {
+        console.log( "window loaded" );
+    });
+    </script>
+
+</body>	
 </html>
