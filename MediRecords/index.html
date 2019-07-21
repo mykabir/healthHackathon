@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Sign-Up/Login Form</title>
+	
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+
+    <!-- Bootstrap core CSS -->
+	<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+	
+	<link rel="stylesheet" href="./css/style.css">
+
+	<style>
+		input[type="date"]:before {
+		content: attr(placeholder) !important;
+		color: #aaa;
+		margin-right: 0.5em;
+		}
+		input[type="date"]:focus:before,
+		input[type="date"]:valid:before {
+		content: "";
+		}
+    </style>
+
+  
+</head>
+
+<body>
+
+  <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab "><a href="#signup">Sign Up</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="/login" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off" name="email"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" name="pass"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button type="submit" class="button button-block"/>Log In</button>
+		  <p class="text-center" id="askingForSingup">Don't have an account? <a href="">Sign Up</a> </p> 
+          
+          </form>
+
+        </div>
+        
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form action="/signup" method="post" name = "signupForm"  >
+
+         
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+				 </div>
+				<input id="signupFirstName" class="form-control" placeholder="First name" type="text" required="">
+				<input id="signupLastName" class="form-control" placeholder="Last name" type="text" required="">
+			</div>
+			
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+				 </div>
+				<input id="signupEmail" class="form-control" placeholder="Email address" type="email" required="">
+			</div> 
+			
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+				</div>
+				<input id="signupPhoneNum" class="form-control" placeholder="Phone number" type="text" required="">
+			</div>
+			
+			<div class="form-group input-group">
+				<div class="input-group-prepend">		    
+				</div>
+				<span class="input-group-text"> <i class="fas fa-calendar-alt"></i> </span>	
+				<input type="Date" id="signupDoB" placeholder="Date of Birth" class="form-control" required="">
+			</div>
+			
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>			
+				</div>
+				<input id="signupCreatePwd" class="form-control" placeholder="Create password" type="password" required="">
+			</div>
+			
+			<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+				</div>
+				<input id="signupRepeatPwd" class="form-control" placeholder="Repeat password" type="password" required="">
+			</div> 
+			 <button type="submit" class="button button-block" />Get Started</button>
+         
+			
+			<p class="text-center" id="askingForLogin">Have an account? <a href="">Log In</a> </p>                                                                  
+          </form>
+
+        </div>
+        
+        
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="./js/script.js"></script>
+
+
+
+
+</body>
+
+</html>
